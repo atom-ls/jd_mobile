@@ -1,0 +1,252 @@
+/*html,body {*/
+    /*max-width: 640px;*/
+    /*min-width: 320px;*/
+    /*margin: 0 auto;*/
+/*}*/
+body,html{
+    height: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0  auto;
+    background: #f5f5f5;
+    position: relative;
+}
+*,::before,::after{
+    padding: 0;
+    margin: 0;
+    /*取消高亮*/
+    -webkit-tap-highlight-color: transparent;
+    /*设置从边框开始计算宽度*/
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+}
+/*设置字体*/
+body {
+    font-family: "microsoft yahei","sans-serif";
+    font-size: 14px;
+    color: #333;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+ol,ul {
+    list-style: none;
+}
+input,textarea {
+    border: none;
+    outline: none;
+    resize: none;
+}
+/*设置浮动*/
+.fl{
+    float: left;
+}
+.fr {
+    float: right;
+}
+/*设置文本居中，居左，居右*/
+.ac {
+    text-align: center;
+}
+.al {
+    text-align: left;
+}
+.ar {
+    text-align: right;
+}
+/*设置width值*/
+.w100 {
+    width: 100%;
+}
+.w50 {
+    width: 50%;
+}
+.w25 {
+    width: 25%;
+}
+/*设置img和a的宽度和display*/
+img,a{
+    width: 100%;
+    display: block;
+}
+/*清除浮动*/
+.clearfix::after,.clearfix::before {
+    content: '';
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+/*直接设置好精灵图的位置和background-size*/
+[class^="icon-"] {
+    background: url("../images/sprites.png") no-repeat;
+    background-size:200px 200px ;
+}
+/*设置常用的margin和padding*/
+.ma5 {
+    margin: 5px;
+}
+.ma10 {
+    margin: 10px;
+}
+.ma_r5{
+    margin-right: 5px;
+}
+.ma_r10 {
+    margin-right: 10px;
+}
+.ma_l5 {
+    margin-left: 5px;
+}
+.ma_l10 {
+    margin-left: 10px;
+}
+.pa5 {
+    padding: 5px;
+}
+.pa10 {
+    padding: 10px;
+}
+.pa_l5 {
+    padding-left: 5px;
+}
+.pa_l10 {
+    padding-left: 10px;
+}
+.pa_r5 {
+    padding-right: 5px;
+}
+.pa_r10 {
+    padding-right: 10px;
+}
+/*设置防止单行溢出*/
+.one_txt_cut {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/*设置防止多行溢出*/
+.txt_cut {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+
+/*搭建伪类边框*/
+.line-right,.line-bottom,.line-left,.line-top{
+    position: relative;
+}
+.line-right::before,.line-left::before,.line-top::before,.line-bottom::before{
+    content: '';
+    position: absolute;
+}
+.line-bottom::before {
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid red;
+}
+.line-top::before {
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top: 1px solid red;
+}
+.line-right::before {
+    width: 0;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-right: 1px solid red;
+}
+.line-left::before {
+    width:0;
+    height: 100%;
+    left:0;
+    top: 0;
+    border-left: 1px solid red;
+}
+/*垂直水平居中*/
+.my_center,.my_center:before{
+    position:absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+}
+/*竖直方向的居中，但是靠左*/
+.my_col_center {
+    position:absolute;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+/*水平方向的居中但是靠上*/
+.my_row_center {
+    position:absolute;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+}
+
+/*topbar*/
+.jd_topbar {
+    width: 100%;
+    height: 45px;
+    min-width: 320px;
+    max-width: 640px;
+    border-bottom: 1px solid #ccc;
+    background: url("../images/header-bg.png") repeat-x top left /1px 44px;
+    position: fixed;
+    z-index: 2;
+}
+.jd_topbar a {
+    position: absolute;
+    width: 40px;
+    height: 44px;
+    padding: 10px 12px;
+    top: 0;
+    background-origin:content-box;
+    background-clip:content-box;
+}
+.icon-back {
+    left: 0;
+    background-position:-20px 0;
+}
+.icon-menu {
+    right: 0;
+    background-position: -60px 0;
+}
+.jd_search {
+    padding: 0 45px;
+}
+.jd_search input {
+    width: 100%;
+    margin: 7px auto;
+    height: 30px;
+    display: block;
+    border-radius:10px;
+    padding-left: 15px;
+}
+.jd_topbar h3 {
+    font-size: 16px;
+    text-align: center;
+    line-height: 44px;
+}
+
+
+
+
+
+
+
